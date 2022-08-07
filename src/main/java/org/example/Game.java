@@ -14,6 +14,10 @@ public class Game extends Thread {
         this.settingsWindow.showFrame();
     }
 
+    public void reload() {
+        this.field.clear();
+        field.initRandomDots(5000);
+    }
     public void pause() {
         settings.setPause(true);
     }
@@ -37,6 +41,7 @@ public class Game extends Thread {
         try {
             do {
                 gameLogic();
+                mainWindow.update();
                 sleep(settings.getSpeed() * 100L);
             } while (true);
         } catch (InterruptedException e) {
@@ -46,8 +51,6 @@ public class Game extends Thread {
 
     public void gameLogic() {
         if (settings.isPaused()) return;
-
         field.update();
-        mainWindow.update();
     }
 }

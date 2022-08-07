@@ -22,15 +22,20 @@ public class Canvas extends JPanel {
             for (int x = 0; x < field.getWidth(); x++) {
                 if (field.getValue(x, y)) {
                     graphics2D.setColor(Color.darkGray);
-                } else {
-                    graphics2D.setColor(Color.white);
-                }
-
-                graphics2D.fillRect(
+                    graphics2D.fillRect(
                         startX + (x * size),
                         startY + (y * size),
                         size,
                         size);
+                } else {
+                    graphics2D.setColor(Color.white);
+                    graphics2D.drawRect(
+                            startX + (x * size),
+                            startY + (y * size),
+                            size-1,
+                            size-1);
+                }
+
             }
         }
     }

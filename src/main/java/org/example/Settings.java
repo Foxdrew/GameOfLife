@@ -16,7 +16,7 @@ public class Settings {
     }
 
     public static Settings Big() {
-        return new Settings(400, 200, 4, 1, false);
+        return new Settings(400, 200, 4, 1, true);
     }
 
     public Settings(int width, int height, int cellSize, int speed, boolean isPaused) {

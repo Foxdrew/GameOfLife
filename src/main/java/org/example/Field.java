@@ -17,6 +17,9 @@ public class Field {
         this.field = new boolean[height][width];
     }
 
+    public void clear() {
+        this.field = new boolean[this.height][this.width];
+    }
     public int getWidth() {
         return width;
     }
